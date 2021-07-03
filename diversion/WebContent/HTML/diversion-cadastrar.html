@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar</title>
+
+<link rel="stylesheet" href="../CSS/style-cadastrar.css">
+
+    <!-- ICONE DA PÁGINA-->
+<link rel="shortcut icon" href="../IMG/cad.png" type="imagem/png">
+
+  <!-- FONTE OPEN SANS -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- FRAMEWORK SWEET ALERT 2 QUE DISPONIBILIZA ALERTS COSTUMIZADOS -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+<script>
+
+	//AO CARREGAR  A PÁGINA ELE MOSTRAR ESTE ALERT
+	window.onload = function() {
+		Swal.fire({
+					position : 'center',
+					icon : 'info',
+					title : 'Para se cadastrar você deve possui idade superior ou igual a 18 anos'
+
+				})
+				
+	}
+</script>
+
+
+
+<body>
+	<div class="side-navbar">
+		<a href="../diversion-index.html">Home</a> 
+		<a href="diversion-atracoes.html">Atrações</a> 
+		<a href="diversion-visualizar-ingresso.html">Visualizar Ingressos</a> 
+		<a href="diversion-login.html">Login como cliente</a>
+	</div>
+    
+      <!--FORM CADASTRAR-->
+	<div class="login-page">
+		<div class="form">
+				<form name="form_cadastro" class="register-form" id="form_cadastro">
+				<h2>Cadastro</h2>
+				
+				<input name="nome_usuario_cadastrar" type="text" id="nome_usuario" placeholder="Nome de Usuário" autocomplete="off" pattern="^[a-zA-Z_0-9]+$" title="Nome de usuário não pode conter caracteres especiais" autofocus>
+				 
+				<input name="idade_cadastrar" type="text" id="idade_usuario" placeholder="Idade" maxlength="2" autocomplete="off" pattern="^[0-9]+$" title="Idade só pode conter números"  autofocus> 
+				
+				<input name="nome_cadastrar" type="text" id="nome_cliente" placeholder="Nome Completo" autocomplete="off" pattern="^([a-zA-Zà-úÀ-Ú]|\s)+$"  title="Nome do cliente não pode conter números e ou caracteres especiais" autofocus>
+				
+				<input name="email_cadastrar" type="email" id="email" placeholder="E-mail" autocomplete="off" pattern="^\w*(\.\w*)?@\w*\.[a-z]+(\.[a-z]+)?$"  title="Email deve conter @ e o .com"  autofocus> 
+				
+				<input name="senha_cadastrar" type="password" id="senha" placeholder="Senha" autocomplete="off" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{9,}$"  title="Senha deve conter até 9 caracteres e deve ter como obrigatório letra minusculas ou letras maiúsculas e números" autofocus>
+				
+				<input name="phone_cadastrar" type="tel" id="phone_usuario" placeholder="Telefone" autocomplete="off" pattern="^[0-9]+$" title="Telefone só pode conter números" autofocus>
+				
+				<button type="submit" onclick="return validarCadastroEditar()" formaction="../Cadastrar">Cadastrar</button>
+				
+				<p class="message">Possui<a href="diversion-login.html"> login ?</a>
+				</p>
+			</form>
+		</div>
+	</div>
+
+	<!--POP UP FAQS-->
+	<section>
+		<div class="popup" id="popup-1">
+			<div class="overlay"></div>
+			<div class="content">
+				<div class="close-btn" onclick="togglePopup()">&times;</div>
+				<h2 id="pop">Perguntas Frequentes(FAQs)</h2>
+				<p>
+				<div class="accordion">
+					<div class="icon"></div>
+					<h5>Menores de idade podem comprar no site?</h5>
+				</div>
+				<div class="panel">
+					<p>Não, somente pessoas com idade superior ou igual a 18 anos.
+					</p>
+				</div>
+				<div class="accordion">
+					<div class="icon"></div>
+					<h5>Porque quando preecho o cadastro está vermelho em volta?</h5>
+				</div>
+				<div class="panel">
+					<p>Provalvelmente você está preechendo de forma errada, é
+						exibido uma mensagem do porque disso.</p>
+				</div>
+				<div class="accordion">
+					<div class="icon"></div>
+					<h5>Existe idade minima para o cadastro?</h5>
+				</div>
+				<div class="panel">
+					<p>Sim, é obrigatório ter idade superior ou igual a 18 anos</p>
+				</div>
+				<div class="accordion">
+					<div class="icon"></div>
+					<h5>O ingresso pode ser utilizado em qualquer dia para entrada
+						no parque?</h5>
+				</div>
+				<div class="panel">
+					<p>Sim, porém apenas uma vez, sendo obrigatório apresentar o
+						comprovante disponibilizado no final da compra, para validar o
+						ingresso.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--POP UP CONTATO-->
+	<section>
+		<div class="popup" id="popup-2">
+			<div class="overlay"></div>
+			<div class="content">
+				<div class="close-btn" onclick="ativar2()">&times;</div>
+				<h2 id="pop2">Entre em contato conosco!</h2>
+				<p>
+				<div id="container">
+					<div class="box">
+						<div class="imgBx">
+							<img src="../IMG/call.png">
+						</div>
+						<div class="content">
+							<div class="icon">
+								<img src="../IMG/call.png">
+								<h3>Numero Contato</h3>
+								<h4>+55 41984394153</h4>
+								<h4>+55 4198894787</h4>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="imgBx">
+							<img src="../IMG/email.png">
+						</div>
+						<div class="content">
+							<div class="icon">
+								<img src="../IMG/email.png">
+								<h3>Email</h3>
+								<h4>gabriel@diversion.com</h4>
+								<h4>joao@diversion.com</h4>
+							</div>
+						</div>
+					</div>
+
+					<div class="box">
+						<div class="imgBx">
+							<img src="../IMG/mapa.png">
+						</div>
+						<div class="content">
+							<div class="icon">
+								<img src="../IMG/mapa.png">
+								<h3>Endereço</h3>
+								<h4>Curitiba, Rua XV de março, 1451</h4>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- FOOTER -->
+	<div class="footer">
+		<footer class="sticky-footer">
+			<ul>
+				<li>
+					<button onclick="togglePopup()" class="btn-hover color-3">Perguntas
+						Frequentes</button>
+				</li>
+				<li>
+					<button onclick="ativar2()" class="btn-hover color-3">Contato</button>
+			</ul>
+			<p>&copy; Copyright diversiON 2021.</p>
+		</footer>
+	</div>
+    
+ 	<!-- VALIDA OS CAMPOS DE CADASTRO-->
+   <script src="../JS/script-validar.js"></script> 
+
+<!-- POPUPS -->
+<script src="../JS/script-popups.js"></script> 
+
+</body>
+</html>
+

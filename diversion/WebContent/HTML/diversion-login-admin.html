@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login Administrador</title>
+    
+<link rel="stylesheet" href="../CSS/style-login.css">
+
+   
+<!-- ICONE DA PÁGINA-->
+<link rel="shortcut icon" href="../IMG/logadmin.png" type="imagem/png">
+
+<!-- FONTE OPEN SANS -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+ 
+<!-- FRAMEWORK SWEET ALERT 2 QUE DISPONIBILIZA ALERTS COSTUMIZADOS --> 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<!-- ESTOU UTILIZANDO A TAG STYLE PARA PODER MUDAR O BACKGROUND DA PÁGINA E NÃO FICAR IGUAL AO DO CSS -->
+<style>
+body {
+	background-image: url(../IMG/backadmin.jpg);
+}
+</style>
+
+
+
+
+</head>
+<body>
+       <div class="side-navbar">
+        <a href="../diversion-index.html">Home</a>
+        <a href="diversion-atracoes.html">Atrações</a>
+        <a href="diversion-visualizar-ingresso.html">Visualizar Ingressos</a>
+        <a href="diversion-cadastrar.html">Cadastrar</a>
+        <a href="diversion-login.html">Login como cliente</a>
+    </div>
+    
+      <!--FORM LOGIN ADMIN-->
+     <div class="login-page">
+         <div class="form">
+             <form  name="form_login_admin" id="form_login_admin">
+                 <h2>Login</h2>
+                 <input  name="email_admin"  id="email_login" type="email"   placeholder="E-mail  (ADMIN)" autocomplete="off"  pattern="^\w*(\.\w*)?@\w*\.[a-z]+(\.[a-z]+)?$" title="Insira um email válido" autofocus>
+                 <input name="senha_admin" id="senha_login" type="password" placeholder="Senha (ADMIN)"  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"  title="Insira uma senha válida"  autofocus>         
+                 <button type="submit" onclick="return validarLogin()" formaction="../LoginAdmin">Login</button>
+                                 
+                
+             </form>
+                
+         </div>
+     </div>
+     
+     
+       
+     <!--POP UP FAQS-->
+     <section>
+       <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup()">&times;
+                    </div>
+                <h2 id="pop">Perguntas Frequentes(FAQs)</h2>
+                <p>
+                    
+                    <div class="accordion">
+                        <div class="icon"></div>
+                        <h5>Sou admin, como qual e-mail e senha eu devo preencher o login?</h5>
+                    </div>
+                        <div class="panel">
+                            <p>Com os dados fornecidos pelos desenvolvedores.    
+                            </p>
+                        </div>
+                    <div class="accordion">
+                        <div class="icon"></div>
+                        <h5>Estou tentando realizar login mas está dando errado</h5>
+                    </div>
+                        <div class="panel">
+                            <p>Provalvelmente você não é admin, realize o cadastro como cliente.  
+                            </p>
+                        </div>
+                    <div class="accordion">
+                        <div class="icon"></div>
+                        <h5>Quantos admins o site deve ter?</h5>
+                    </div>
+                        <div class="panel">
+                            <p>Isto deve ser estipulado pelo dono do parque.
+                            </p>
+                        </div>   
+     
+                   </div>  
+            </div> 
+        </section>
+        
+        <!--POP UP CONTATO-->
+         <section>
+            <div class="popup" id="popup-2">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="ativar2()">&times;
+                    </div>
+                <h2 id="pop2">Entre em contato conosco!</h2>
+                <p>
+                    <div class="container">
+                        <div class="box">
+                            <div class="imgBx">
+                                <img src="../IMG/call.png">
+                            </div>
+                            <div class="content">
+                            <div class="icon">
+                            <img src="../IMG/call.png"> 
+                            <h3>Numero Contato</h3>   
+                            <h4>+55 41984394153</h4> 
+                            <h4>+55 4198894787</h4></div>
+                        </div>  
+                        </div>
+                        <div class="box">
+                            <div class="imgBx">
+                                <img src="../IMG/email.png">
+                            </div>
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="../IMG/email.png">
+                                    <h3>Email</h3>   
+                                     <h4>gabriel@diversion.com</h4> 
+                                    <h4>joao@diversion.com</h4>  </div>
+                                </div> 
+                        </div>
+                
+                        <div class="box">
+                            <div class="imgBx">
+                                <img src="../IMG/mapa.png">
+                            </div>
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="../IMG/mapa.png">
+                                    <h3>Endereço</h3>   
+                                    <h4>Curitiba, Rua XV de março, 1451</h4> 
+                                </div>
+                            </div> 
+                        </div>      
+                      </div>
+                  </div>
+            </div>
+        </section>
+        
+        
+        
+        
+	<!-- FOOTER -->
+     <footer class="sticky-footer"> 
+        <ul>
+              <li> <button onclick="togglePopup()" class="btn-hover color-3">Perguntas Frequentes</button></li>
+                <li> <button onclick="ativar2()" class="btn-hover color-3">Contato</button>
+        </ul>
+        <p>&copy; Copyright diversiON 2021.</p>
+    </footer>
+    
+    <!-- VALIDA OS CAMPOS DE LOGIN ADMIN-->
+   <script src="../JS/script-validar.js"></script> 
+    
+<!-- POPUPS -->
+<script src="../JS/script-popups.js"></script> 
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Atrações</title>
+<link rel="stylesheet" href="../CSS/style-index-atracoes.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="shortcut icon" href="../IMG/atracao.png" type="imagem/png">
+<!-- ICONE DA PÁGINA-->
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- FRAMEWORK SWEET ALERT 2 QUE DISPONIBILIZA ALERTS COSTUMIZADOS -->
+
+
+<script>
+
+//EFEITO AO DESLIZAR A PÁGINA
+window.addEventListener("scroll", function() {
+	var header = document.querySelector("header");
+	header.classList.toggle("sticky", window.scrollY > 0);
+})
+
+</script>
+
+
+
+</head>
+<body>
+     <!-- TOP BAR-->
+	<header>
+		<a href="diversion-atracoes.html" class="logo">ATRAÇÕES</a>
+		<ul>
+			<li><a href="../diversion-index.html">Home</a></li>
+			<li><a href="diversion-visualizar-ingresso.html">Visualizar Ingressos</a></li>
+			<li><a href="diversion-cadastrar.html">Cadastrar</a></li>
+			<li><a href="HTML/diversion-login-admin.html">Administrador</a></li>
+			<li><a href="#">
+					<button class="bn54" onclick="ativar3()">
+						<span class="bn54span">Login</span>
+					</button>
+			</a></li>
+
+
+		</ul>
+	</header>
+
+	<section class="banner">
+
+		<!-- CONTEUDO DA PAGINA ATRACOES -->
+		<div class="card card1">
+			<h5>Montanha Russa</h5>
+			<p class="b">Um carrinho que sai voando? Diversão nos trilhos!</p>
+
+		</div>
+		<div class="card card2">
+			<h5>Roda gigante</h5>
+			<p class="b">Aquele passeio nas alturas, para observar a
+				paisagem!</p>
+
+		</div>
+
+		<div class="card card3">
+			<h5>Cave Monster</h5>
+			<p class="b">Um passeio assustador, cheio de suspense!</p>
+		</div>
+
+		<!--POP UP FAQS-->
+
+		<div class="popup" id="popup-1">
+			<div class="overlay"></div>
+			<div class="content">
+				<div class="close-btn" onclick="togglePopup()">&times;</div>
+				<h2>Perguntas Frequentes(FAQs)</h2>
+				<p>
+				<div class="accordion">
+					<div class="icon"></div>
+					<h5>Qual horario de funcionamento do parque?</h5>
+				</div>
+				<div class="panel">
+					<p>O parque fica aberto de Terça-feira a Sábado, das 9 da manhã
+						até 18 da tarde.</p>
+				</div>
+				<div class="accordion">
+					<div class="icon"></div>
+					<h5>O parque permanece aberto em feriados?</h5>
+				</div>
+				<div class="panel">
+					<p>Sim, o parque permanece aberto em dias de feriado</p>
+				</div>
+				<div class="accordion">
+					<div class="icon"></div>
+					<h5>Existe idade minima para entrada em alguns brinquedos?</h5>
+				</div>
+				<div class="panel">
+					<p>Não, o tamanho minimo para entrada em brinquedos radicais é
+						de 1,30cm.</p>
+				</div>
+				<div class="accordion">
+					<div class="icon"></div>
+					<h5>Qual atração mais famosa do parque?</h5>
+				</div>
+				<div class="panel">
+					<p>Podemos afirmar com cem porcento de certeza que é a cave
+						monster, foi muito bem elaborada, vale a pena conferir.</p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+
+	<!--POP UP LOGIN-->
+	<section>
+		<div class="popup" id="popup-3">
+			<div class="overlay"></div>
+			<div class="content">
+				<div class="close-btn" onclick="ativar3()">&times;</div>
+				<p>
+				<div class="close-btn" onclick="ativar3()">&times;</div>
+				<div class="center">
+					<h1>Login</h1>
+					<form name="formlogin" id="form_login">
+						<div class="txt_field">
+								<input name="email_login" type="email" id="email_login" placeholder="E-mail" autocomplete="off" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Insira um e-mail válido" autofocus> 
+						</div>
+						<div class="txt_field">
+							<input name="senha_login" type="password" id="senha_login" placeholder="Senha" autocomplete="off" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{9,}$" title="Insira uma senha válida" autofocus> 
+						</div>
+						<input type="submit" value="Login" onclick="return validarlogin()"
+							formaction="../Login">
+						<div class="signup_link">
+							Não tem cadastro? <a href="diversion-cadastrar.html">Cadastrar</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--POP UP CONTATO-->
+	<section>
+		<div class="popup" id="popup-2">
+			<div class="overlay"></div>
+			<div class="content">
+				<div class="close-btn" onclick="ativar2()">&times;</div>
+				<h2>Entre em contato conosco!</h2>
+				<p>
+				<div class="container">
+					<div class="box">
+						<div class="imgBx">
+							<img src="../IMG/call.png">
+						</div>
+						<div class="content">
+							<div class="icon">
+								<img src="../IMG/call.png">
+								<h3>Numero Contato</h3>
+								<h4>+55 41984394153</h4>
+								<h4>+55 4198894787</h4>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="imgBx">
+							<img src="../IMG/email.png">
+						</div>
+						<div class="content">
+							<div class="icon">
+								<img src="../IMG/email.png">
+								<h3>Email</h3>
+								<h4>gabriel@diversion.com</h4>
+								<h4>joao@diversion.com</h4>
+							</div>
+						</div>
+					</div>
+
+					<div class="box">
+						<div class="imgBx">
+							<img src="../IMG/mapa.png">
+						</div>
+						<div class="content">
+							<div class="icon">
+								<img src="../IMG/mapa.png">
+								<h3>Endereço</h3>
+								<h4>Curitiba, Rua XV de março, 1451</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    
+    <!-- FOOTER -->
+	<footer class="sticky-footeratra">
+
+		<ul>
+			<li><button onclick="togglePopup()" class="btn-hover color-3">Perguntas
+					Frequentes</button></li>
+			<li><button onclick="ativar2()" class="btn-hover color-3">Contato</button></li>
+		</ul>
+		<p>&copy; Copyright diversiON 2021.</p>
+	</footer>
+	
+   <!-- VALIDA OS CAMPOS DO POPUP DE LOGIN -->
+  <script src="../JS/script-validar.js"></script> 
+   
+	
+   <!-- POPUPS -->
+  <script src="../JS/script-popups.js"></script> 
+
+</body>
+</html>
+
+
+
+
+
