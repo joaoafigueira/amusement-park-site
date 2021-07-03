@@ -1,5 +1,5 @@
 # Amusement-park-site
-Website created for amusement parks with the purpose of: 
+Diversion is a amusement park Website created for the purpose of: 
 
 - Automate ticket sales;
 - Control of customer information.
