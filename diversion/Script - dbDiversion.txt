@@ -1,0 +1,82 @@
+
+/*---------------------------MAIN SETTINGS------------------------*/
+create database dbDiversion;
+drop database dbDiversion;
+use dbDiversion;
+show tables; 
+/*---------------------------MAIN SETTINGS------------------------*/
+
+/*--------------------------------cliente table-----------------------*/
+describe cliente;
+select * from cliente;
+
+create table cliente(
+  id int primary key auto_increment,
+  clienteUser varchar(50) not null,
+  clienteIdade int not null,
+  clienteNome varchar(50) not null,
+  clienteEmail  varchar(100) not null,
+  clienteSenha varchar(50) not null,
+  clientePhone int(15) not null
+);
+/*--------------------------------cliente table-----------------------*/
+
+
+
+/*--------------------------------admin table-----------------------*/
+describe administrador;
+select * from administrador;
+
+create table administrador(
+  id int primary key auto_increment,
+  adminUser varchar(50) not null,
+  adminNome varchar(50) not null,
+  adminEmail  varchar(100) not null,
+  adminSenha varchar(50) not null,
+  adminPhone int(15)
+);
+
+insert into administrador (adminUser,adminNome,adminEmail,adminSenha,adminPhone) values ('admin','João Victor Alves Figueira', 'admin@diversion.com', 'admin123', '0');
+/*--------------------------------admin table-----------------------*/
+
+/*--------------------------------pedido table-----------------------*/
+describe pedido;
+select * from pedido;
+
+create table pedido(
+   id int primary key auto_increment,
+   dataPedido varchar(100) not null,
+   pedidoTotal decimal(10,2),
+   precoTotalIngressointeiro decimal(10,2),
+   precoTotalIngressomeio decimal(10,2),
+   idCliente int not null
+);
+
+alter table pedido
+add foreign key(idCliente)
+references cliente(id)
+ON DELETE CASCADE;
+/*--------------------------------pedido table-----------------------*/
+
+
+
+/*--------------------------------pedidoingresso table-----------------------*/
+
+describe pedidoIngresso;
+select * from pedidoIngresso;
+
+create table pedidoIngresso(
+  id int primary key auto_increment,
+  quantidadeIngressoInteiro int not null,
+  quantidadeSoma int not null,
+  quantidadeIngressoMeio int not null,
+  idPedido int not null
+);
+
+   alter table pedidoIngresso
+   add foreign key(idPedido)
+   references pedido(id)
+   ON DELETE CASCADE;
+/*--------------------------------pedidoingresso table-----------------------*/
+
+
