@@ -1,5 +1,5 @@
-# Amusement-park-site -- Select Language:  **English**, [Português]()
-Diversion is a amusement park website created for the purpose of: 
+# Amusement-park-site -- Select Language:  **English**, [Portuguese](README-pt.md)
+Diversion is a  website created for the purpose of: 
 
 - Automate ticket sales;
 - Control of customer information.
