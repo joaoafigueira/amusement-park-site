@@ -14,4 +14,4 @@ Installation instructions:
 
 - Jre 1.8.0_162 or higher;
 
-- Jdk 1.8.0_162 or higher
+- Jdk 1.8.0_162 or higher.
