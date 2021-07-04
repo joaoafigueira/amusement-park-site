@@ -1,4 +1,4 @@
-# Site de parque de diversões -- Select Language:  **Portuguese**, [English]()
+# Site de parque de diversões -- Select Language:  **Portuguese**, [English](README.md)
 Diversion é um website  criado com o propósito de: 
 
 - Automatizar a venda de ingressos;
