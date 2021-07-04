@@ -7,3 +7,11 @@ Diversion é um website  criado com o propósito de:
 No Back-end eu construí o site no padrão MVC usando Java, com conexão de dados usando JDBC.
 
 No front-end usei java script, html, css e Jquery.
+
+Instruções de instalação:
+
+Apache-tomcat 8.5.65 ou superior;
+
+Jre 1.8.0_162 ou superior;
+
+Jdk 1.8.0_162 ou superior.
