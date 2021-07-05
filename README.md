@@ -12,6 +12,4 @@ Installation instructions:
 
 - Apache-tomcat 8.5.65 or higher;
 
-- Jre 1.8.0_162 or higher;
-
 - Jdk 1.8.0_162 or higher.
